@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: ghost
   chart:
-    git: ssh://git@gitops-bitbucket-test-server.eastus.cloudapp.azure.com/git/gitops-privatehost-test
+    git: ssh://git@gitops-bitbucket-test-server.eastus.cloudapp.azure.com/git/gitops-privatehost-test.git
     ref: master
     path: charts/ghost
   values:
