@@ -1,17 +1,17 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: podinfo-prod
-  namespace: prod
+  namespace: demo
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~0.4
+    clusterconfig.azure.com/use-local-repo: "true"
 spec:
+  interval: 10m
   releaseName: podinfo-prod
   chart:
-    git: ssh://git@gitops-bitbucket-test-server.eastus.cloudapp.azure.com/git/gitops-privatehost-test.git
-    path: charts/podinfo
-    ref: master
+    spec:
+      chart: charts/podinfo
   values:
     image:
       repository: stefanprodan/podinfo

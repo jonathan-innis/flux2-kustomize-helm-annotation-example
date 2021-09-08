@@ -1,18 +1,18 @@
 ---
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ghost
   namespace: demo
   annotations:
     fluxcd.io/automated: "false"
-    fluxcd.io/tag.chart-image: glob:3.1.1-debian-9-*
+    clusterconfig.azure.com/use-local-repo: "true"
 spec:
+  interval: 10m
   releaseName: ghost
   chart:
-    git: ssh://git@gitops-bitbucket-test-server.eastus.cloudapp.azure.com/git/gitops-privatehost-test.git
-    ref: master
-    path: charts/ghost
+    spec:
+      chart: charts/ghost
   values:
     image:
       repository: bitnami/ghost
