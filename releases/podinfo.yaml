@@ -5,7 +5,7 @@ metadata:
   namespace: demo
   annotations:
     fluxcd.io/automated: "true"
-    clusterconfig.azure.com/use-local-repo: "true"
+    clusterconfig.azure.com/use-managed-source: "true"
 spec:
   interval: 10m
   releaseName: podinfo-prod
