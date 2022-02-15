@@ -3,13 +3,14 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ghost
-  namespace: demo
+  namespace: demo-bucket
   annotations:
     fluxcd.io/automated: "false"
     clusterconfig.azure.com/use-managed-source: "true"
 spec:
   interval: 10m
   releaseName: ghost
+  targetNamespace: demo-bucket
   chart:
     spec:
       chart: charts/ghost
