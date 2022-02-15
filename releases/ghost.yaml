@@ -10,6 +10,7 @@ metadata:
 spec:
   interval: 10m
   releaseName: ghost
+  targetNamespace: demo-git
   chart:
     spec:
       chart: charts/ghost
