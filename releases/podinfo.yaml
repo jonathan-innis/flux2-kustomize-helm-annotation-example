@@ -9,6 +9,7 @@ metadata:
 spec:
   interval: 10m
   releaseName: podinfo-prod
+  targetNamespace: demo-git
   chart:
     spec:
       chart: charts/podinfo
